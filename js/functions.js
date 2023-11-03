@@ -69,3 +69,85 @@ console.log("Division = " +divi.toFixed(2));
 // Modulo 
 var modulo= number_one % number_two;
 console.log("Modulo = " +modulo);
+
+// OPERADORES LOGICOS (INVERSE,INCREMENTO Y DECREMENTO)
+// AND && con if (&&=ampersand)
+// "=" (asignacion), "==" (comparacion), "===" (compara el dato y el tipo de valor)
+var bool=true;
+var numeric= 10;
+if(bool && numeric==="10"){
+    console.log("Entra If");
+} 
+else{
+    console.log("Entra Else");
+}
+// OR || CON IF 
+var bool=true;
+var numeric= 7;
+if(bool || numeric ==7){
+    console.log("Entra If");
+    numeric+=3;
+}
+else{
+    console.log("Entra Else");
+    numeric--;}
+console.log(numeric);
+
+// FOR
+// console.log(("longitud: ") + array_text.length)
+for(let j =0; j<array_text.length; j++){
+    console.log(array_text[j] + " " + (j+1))
+}
+
+// While
+let s=0;
+console.log("While");
+while(s<array_text.length){
+    console.log(array_text[s] + " " + (s+1));
+    s++
+}
+//  DO WHILE
+let m = 0;
+console.log("Do While");
+do{
+    console.log(array_text[m] + " " + (m+1));
+    m++;
+}
+while(m<array_text.length)
+
+
+// FUNCIONES Y EVENTOS
+function load_page(){
+    // alert("LA PAGINA HA CARGADO CORRECTAMENTE")
+}
+
+function change_color(){
+    document.body.style.backgroundColor ="red"
+    document.body.style.color="#fff"
+}
+
+const btn_limpiar = document.querySelector("#clear_color");
+
+clear_color.addEventListener("click", () => {
+    document.body.style.backgroundColor ="#fff"
+    document.body.style.color="#000"
+});
+
+// REGISTRO FORMULARIO
+const form_register = document.getElementById("form_register");
+const nombres = document.getElementById("nombres");
+const apellidos = document.getElementById("apellidos");
+const information = document.getElementById("information");
+
+form_register.addEventListener("submit", name_event =>{
+    name_event.preventDefault();
+    let info = "";
+    console.log(nombres.value);
+    if(nombres.value.length <= 2 || apellidos.value.length <=2){
+        alert ("NOMBRES Y/O APELLIDOS INVALIDOS")
+    }
+    else{
+        alert(nombres.value + " " + apellidos.value)
+    }
+    information.innerText = info;
+})
