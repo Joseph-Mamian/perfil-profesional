@@ -19,20 +19,20 @@ document.write(name + "###Wilder Duarte")
 document.getElementById("box_one").innerHTML= "<h1>Wilder Duarte</h1>";
 document.getElementById("box_two").innerText= "<h1>Wilder Duarte</h1>";
 // librerias
-// Swal.fire(
-//     'The Internet?',
-//     'That thing is still around?',
-//     'question'
-//   )
-// Swal.fire({
-//     icon: 'error',
-//     ShowConfirmButton: false,
-//     title:name,
-//     text: name,
-//     footer: "footer: " + name,
-//     background: 'green',
-//     position:'top-start' 
-// });
+Swal.fire(
+    'The Internet?',
+    'That thing is still around?',
+    'question'
+  )
+Swal.fire({
+    icon: 'error',
+    ShowConfirmButton: false,
+    title:name,
+    text: name,
+    footer: "footer: " + name,
+    background: 'white',
+    position:'top-start' 
+});
 
 //##################tipos de datos
 //numericos
@@ -48,9 +48,9 @@ var array_text=["lunes", "Martes", "Miercoles", "jueves", "Viernes", "Sabado", "
 var array_mix=[1, "a",2, "c"]
 var array_mul=[
     {name:"Alfredo", last_name:"Gutierrez", age:"23"},
-    {name:"Alfredo", last_name:"Gutierrez", age:"3"},
-    {name:"Alfredo", last_name:"Gutierrez", age:"43"},
-    {name:"Alfredo", last_name:"Gutierrez", age:"73"}
+    {name:"Juan", last_name:"Gutierrez", age:"3"},
+    {name:"Pedro", last_name:"Gutierrez", age:"43"},
+    {name:"Hector", last_name:"Gutierrez", age:"73"}
 ]
 
 //#################### operadores basicos
@@ -144,10 +144,40 @@ form_register.addEventListener("submit", name_event =>{
     let info = "";
     console.log(nombres.value);
     if(nombres.value.length <= 2 || apellidos.value.length <=2){
-        alert ("NOMBRES Y/O APELLIDOS INVALIDOS")
+        info += "NOMBRES Y/O APELLIDOS INVALIDOS";
+        information.style.color= "red";
     }
     else{
         alert(nombres.value + " " + apellidos.value)
     }
     information.innerText = info;
 })
+// FECHA Y EJERCICIO DE ARRAY
+function load_page(){
+    document.getElementById("nombres").focus();
+    document.getElementById("apellidos").disabled = true;
+    let date = new Date();
+    console.log(date.getMinutes());
+    for(let j=0; j<array_mul.length;j++){
+        console.log(array_mul[j].name);
+    }
+}
+
+function validate(){
+    let nombres = document.getElementById("nombres").value;
+    let nombres_style = document.getElementById("nombres");
+    if (nombres.length > 2){
+        nombres_style.border = "2px solid green";
+        document.getElementById("apellidos").disabled = false;
+        document.getElementById("apellidos").focus();
+        document.getElementById("nombres").value = "";
+        alert(nombres.concat(" Gutierrez "));
+    }
+}
+// let nombres = document.getElementById("nombres");
+//     console.log(nombres);
+//     
+//     }
+//     else{
+//         alert("Nombre invalido")
+//     }
